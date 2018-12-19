@@ -1,0 +1,4 @@
+<option selected disabled>Select</option>
+{% for cite in cities %}
+    <option value="{{ cite.id }}" >{{ cite.cityName }}</option>
+{% endfor %}

@@ -1,0 +1,110 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+{% load i18n %}
+     {% trans ADD_NEW_SESSION %}
+{% endblock %}
+
+{% block pagetitle %}
+    {% trans ADD_NEW_SESSION %}
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">{% trans SESSION %} {{ session.year }}</h4>
+                  <p class="card-category">{% trans ADD_COURSE_AND_EXAMS_IN_THIS_SESSION %}</p>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 ">
+                            <p>Exam name</p>
+                            <h3>{{ examdata.examName }}</h3>
+                        </div>
+                    </div>
+                    <div class="row ">
+                     <div class="col-md-12 ">
+                            <p>Exam Description</p>
+                            <h3>{{ examdata.description }}</h3>
+                        </div>
+                     </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <h3>Related With Class</h3>
+          <div class="row">
+          {% for course in examdata.courses.all %}
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header card-header-success">
+                  <div class="row">
+                      <div class="col-md-10">
+                        <h4 class="card-title">{{ course.course.courseName }}</h4>
+                        <p class="card-category">Course Name</p>
+                      </div>
+                      <div class="col-md-1">
+                          <a href="{% url 'exam.subject' course.id %}"><i class="material-icons">edit</i></a>
+                      </div>
+                  </div>
+
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-striped">
+                        <tr><th>#</th><th>Subject Name</th><th>Minimum Marks</th><th>Maximum Marks</th></tr>
+                        {% for subject in course.subjects.all %}
+                            <tr><th>{{ subject.id }}</th><th>{{ subject.subject.subjectName }}</th><th>{{ subject.minMarks }}</th><th>{{ subject.maxMarks }}</th></tr>
+                        {% endfor %}
+
+                    </table>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+
+
+{% endblock %}
+{% block style %}
+
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #sortable1, #sortable2 {
+    border: 1px solid #eee;
+    width: 100%;
+    min-height: 200px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+  }
+  </style>
+
+{% endblock %}
+
+{% block script %}
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  } );
+  </script>
+{% endblock %}

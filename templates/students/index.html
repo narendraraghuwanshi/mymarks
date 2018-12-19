@@ -1,0 +1,66 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Manage Students
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Manage Students
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Manage Students</h4>
+                            <p class="card-category">Complete your profile</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'students.create'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Add</a>
+                            <a href="{% url 'students.excel'  %}" class="btn btn-sm btn-success float-right"><i class="fa fa-file-excel"></i> Excel</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body table-responsive">
+                    {% load render_table from django_tables2 %}
+                  {% render_table students %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <script>
+        function Delete(id){
+            $.confirm({
+    title: 'Confirm!',
+    content: 'Are you sure to Delete This ?',
+    buttons: {
+        confirm: function () {
+           window.location = '{% url 'students.index' %}'+id+'/delete';
+        },
+        cancel: function () {
+            {#$.alert('Canceled!');#}
+        },
+    }
+});
+        }
+    </script>
+{% endblock %}

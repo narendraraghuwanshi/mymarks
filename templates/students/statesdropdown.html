@@ -1,0 +1,4 @@
+<option selected disabled>Select</option>
+{% for state in states %}
+    <option value="{{ state.id }}" >{{ state.stateName }}</option>
+{% endfor %}

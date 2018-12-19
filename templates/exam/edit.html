@@ -1,0 +1,67 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Exams
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Exams
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Edit Exam</h4>
+                            <p class="card-category">Edit Exam Information</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'exam.index'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-Exams"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+
+
+
+                    <form method="post" action="{% url 'exam.update' examdata.id%}">
+                      {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Exam Name </label>
+                          <input type="text" class="form-control" name="examName" value="{{examdata.examName}}">
+                        </div>
+                      </div>
+
+                        <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          <input type="text" class="form-control" name="description" value="{{examdata.description}}">
+                        </div>
+                      </div>
+
+
+                    </div>
+
+
+
+
+                    <button type="submit" class="btn btn-primary pull-right">Update</button>
+                    <div class="clearfix"></div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}

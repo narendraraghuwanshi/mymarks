@@ -1,0 +1,99 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Users
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Users
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Edit Class</h4>
+                            <p class="card-category">Edit class Information</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'class.index'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-users"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+
+
+
+                    <form method="post" action="{% url 'class.update' classdata.id%}">
+                      {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Class Name </label>
+                          <input type="text" class="form-control" name="courseName" value="{{classdata.courseName}}">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Class Section</label>
+                          <input type="text" class="form-control" name="courseSection" value="{{classdata.courseSection  }}">
+                        </div>
+                      </div>
+                        <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Class Medium</label>
+                          <select name="medium" class="form-control select2">
+                              <option selected disabled>Select</option>
+                              {% for medium in medium %}
+                                <option value="{{ medium.id }}" {% if classdata.medium.id == medium.id %} selected {% endif %}>{{ medium.mediumName }}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          <input type="text" class="form-control" name="courseDescription" value="{{classdata.description}}">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary pull-right">Update</button>
+                    <div class="clearfix"></div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
+
+
+{% block style %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        $(".flatpicker").flatpickr({
+            dateFormat: "Y-m-d"
+        });
+         $('.select2').select2();
+
+    </script>
+{% endblock %}

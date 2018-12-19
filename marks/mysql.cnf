@@ -1,0 +1,5 @@
+[client]
+database = mymarks
+user = root
+password = rtspl
+default-character-set = utf8

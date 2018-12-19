@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3b83c0fa-2946-43be-8481-9ed20766ee0b" name="ssBase" url="http://ec2-18-218-4-35.us-east-2.compute.amazonaws.com">
+        <fileTransfer host="ec2-18-218-4-35.us-east-2.compute.amazonaws.com" port="22" privateKey="$USER_HOME$/Downloads/sss_basic.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="d1226611-cc82-4f20-983d-efdfc14d34a1" name="hsclms" url="http://ec2-18-234-147-199.compute-1.amazonaws.com">
+        <fileTransfer host="ec2-18-234-147-199.compute-1.amazonaws.com" port="22" privateKey="$USER_HOME$/Downloads/hsc.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,89 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Create New Subject
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Create New Subject
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Create New Subject</h4>
+{#                            <p class="card-category">Complete your profile</p>#}
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'subject.index'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-user"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                  <form action="{% url 'subject.store' %}" method="post">
+                       {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label >Subject Name</label>
+                          <input type="text" name="subjectName" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label >Grade or Number</label>
+                          <select name="isGrade" class="form-control">
+
+                              <option >select</option>
+                              <option value="0" >Number</option>
+                              <option value="1">Grade</option>
+
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label >Type</label>
+                          <select name="type" class="form-control">
+                             <option selected disabled>Please Select</option>
+                              {% for s_type in subjectType %}
+                                <option value="{{s_type.pk}}">{{s_type.typeName}}</option>
+                                {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label >Description</label>
+                            <textarea name="description" class="form-control"></textarea>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary pull-right">Create</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}

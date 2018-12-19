@@ -1,0 +1,147 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Add Subject
+{% endblock %}
+
+{% block pagetitle %}
+    Add Subject
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-success">
+                  <h4 class="card-title">Add Subject</h4>
+{#                  <p class="card-category">{% trans ADD_COURSE_AND_EXAMS_IN_THIS_SESSION %}</p>#}
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 ">
+                            <p>Course Name</p>
+                            <h3>{{ exam.course.courseName }}</h3>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Exam Name</p>
+                            <h3>{{ exam.exam.examName}}</h3>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+
+                     <div class="col-md-12">
+                        <p class="text-center">Selected Subject</p>
+                        <table class="table table-striped">
+                        <tr><th>#</th><th>Subject Name</th><th>Minimum Marks</th><th>Maximum Marks</th><th>Option</th></tr>
+                            {% for subject in exam.subjects.all %}
+                                {% if subject.is_deleted == False %}
+                                <tr  id="Sub{{ subject.id }}">
+                                    <td><span id="" class="Sohda">{{ subject.id }}</span></td>
+                                    <td>{{ subject.subject.subjectName }}</td>
+                                    <td>{{ subject.minMarks }}</td>
+                                    <td>{{ subject.maxMarks }}</td>
+                                    <td>
+                                        <a href="?delete={{ subject.id }}" id="Subtd{{ subject.id }}"><i class="material-icons" style="color: #de1b0c">delete</i></a>
+                                        <a  onclick="editForm('{{ subject.subject.subjectName }}',{{ subject.id }},'{{ subject.minMarks }}','{{ subject.maxMarks }}')"><i class="material-icons" style="color: #aa00ff">edit</i></a>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        </table>
+                     </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+          <div class="col-md-4">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <div class="row">
+                      <div class="col-md-10">
+                        <h4 class="card-title">All Subject</h4>
+                        <p class="card-category">All Master Subject Here</p>
+                      </div>
+                      <div class="col-md-1">
+{#                          <a href="{% url 'exam.subject' course.id %}"><i class="material-icons">edit</i></a>#}
+                      </div>
+                  </div>
+                </div>
+                <div class="card-body table-responsive">
+                        <table class="table table-striped">
+                                <tr><th>#</th><th>Subject Name</th><th>Option</th></tr>
+                            {% for sub in masterSubjects %}
+                                <tr  id="Sub{{ sub.id }}"><td>{{ sub.id }}</td><td>{{ sub.subjectName }}</td><td><a href="?add={{ sub.id }}" id="Subtd{{ sub.id }}"><i class="material-icons" title="Add Subject">add</i></a></td></tr>
+                            {% endfor %}
+                        </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <style> .disabled { cursor: not-allowed;background-color: bisque !important;} </style>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <script>
+        function editForm(name,id,min,max)
+        {
+            $.confirm({
+    title: 'Update '+name,
+    content: '' +
+    '<form action="" class="formName">' +
+    '<div class="form-group">' +
+    '<label>Enter Minimum here</label>' +
+    '<input type="text" value="'+min+'" class="min-marks form-control" required />' +
+     '<label>Enter Maximum here</label>' +
+    '<input type="text" value="'+max+'" class="max-marks form-control" required />' +
+    '</div>' +
+    '</form>',
+    buttons: {
+        formSubmit: {
+            text: 'Update',
+            btnClass: 'btn-blue',
+            action: function () {
+                var minmark = this.$content.find('.min-marks').val();
+                if(!minmark){
+                    $.alert('provide a valid minimum marks');
+                    return false;
+                }
+                var maxmark =this.$content.find('.max-marks').val();
+                if(!maxmark){
+                    $.alert('provide a valid maximum marks');
+                    return false;
+                }
+                window.location = '?id='+id+'&min='+minmark+'&max='+maxmark;
+            }
+        },
+        cancel: function () {
+            //close
+        },
+    },
+    onContentReady: function () {
+        // bind to events
+        var jc = this;
+        this.$content.find('form').on('submit', function (e) {
+            // if the user submits the form by pressing enter in the field.
+            e.preventDefault();
+            jc.$$formSubmit.trigger('click'); // reference the button and click it
+        });
+    }
+});
+
+        }
+    </script>
+{% endblock %}

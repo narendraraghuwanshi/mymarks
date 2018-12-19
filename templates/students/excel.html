@@ -1,0 +1,53 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Students Excel upload
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Students Excel upload
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Students Excel upload</h4>
+{#                            <p class="card-category">Complete your profile</p>#}
+                        </div>
+                        <div class="col-md-3">
+                            {% load static %}
+                            <a href="{% url 'students.create'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Add</a>
+                            <a href="{% static 'excel/students.xlsx' %}" download class="btn btn-sm btn-success float-right"><i class="fa fa-download"></i> DownLoad Sample</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                       <form action="{% url 'students.excel' %}" method="post" enctype="multipart/form-data">
+                       {% csrf_token %}
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group bmd-form-group">
+                              <label >Select Excel File</label>
+                              <input type="file" name="excel" required class="form-control" style="opacity: 1;position: initial">
+                            </div>
+                          </div>
+
+                        </div>
+                           <button type="submit" class="btn btn-primary pull-right">Upload</button>
+                            <div class="clearfix"></div>
+                       </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Users
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Users
+{% endblock %}
+
+{% block content %}
+
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="card">
+                <div class="card-header card-header-warning">
+                  <div class="row">
+                        <div class="col-md-8">
+                          <h4 class="card-title">Users Detail</h4>
+                          <p class="card-category">{{ user.first_name }} on {% now "jS F Y H:i" %}</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'user.create'  %}" class="btn btn-sm btn-success float-right" title="Create User"><i class="fa fa-pencil"></i></a>
+                        </div>
+                     </div>
+                </div>
+                <div class="card-body table-responsive">
+
+                  <table class="table table-hover">
+                    <thead class="text-warning">
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>User name</th>
+                      <th>Email</th>
+                      <th>Option</th>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                      <tr>
+                        <td></td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td><a href="{% url 'user.detail' user.id %}" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>
+                      </tr>
+                     {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}

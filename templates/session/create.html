@@ -1,0 +1,76 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Add New Session
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Add New Session
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Add New Session</h4>
+{#                  <p class="card-category">Create new Class</p>#}
+                </div>
+                <div class="card-body">
+                  <form method="post" action="{% url 'session.store'%}">
+                      {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Select Session Start Date </label>
+                          <input type="date"  class="form-control flatpicker" name="sessionStartDate">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Select Session End Date </label>
+                          <input type="date"  class="form-control flatpicker" name="sessionEndDate">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Session Description</label>
+                            <textarea name="sessionDescription" class="form-control"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Create</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+{% endblock %}
+{% block style %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        $(".flatpicker").flatpickr({
+            dateFormat: "Y-m-d"
+        });
+         $('.select2').select2();
+    </script>
+{% endblock %}

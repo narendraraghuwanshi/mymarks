@@ -1,0 +1,43 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Users
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Users
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Edit Profile</h4>
+                            <p class="card-category">Complete your profile</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'user.index'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-user"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                  <form>
+                    {% csrf_token %}
+
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}

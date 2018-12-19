@@ -1,0 +1,203 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Create New User
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Create New User
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Create New User</h4>
+                            <p class="card-category">Complete your profile</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'user.index'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-user"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                  <form action="{% url 'user.store' %}" method="post">
+                       {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Fist Name</label>
+                          <input type="text" name="first_name" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Last Name</label>
+                          <input type="text" name="last_name" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Father Name</label>
+                          <input type="text" name="fatherName" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Mother Name</label>
+                          <input type="text" name="motherName" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Roll Number</label>
+                          <input type="text" name="rollNumber" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Enrollment Number</label>
+                          <input type="text" name="enrollmentNumber" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Scholarship Number</label>
+                          <input type="text" name="scholarshipNumber" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Adhaar Number</label>
+                          <input type="text" name="adhaarNumber" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Family Id</label>
+                          <input type="text" name="familyId" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">SSSM Id</label>
+                          <input type="text" name="sssmId" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                      <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Bank Name</label>
+                          <input type="text" name="bankName" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Bank IFSC Code</label>
+                          <input type="text" name="bankIfsc" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                     <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Bank Account Number</label>
+                          <input type="text" name="accountNumber" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Mobile Numer</label>
+                          <input type="text" name="mobile" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Gender</label>
+                          <input type="radio" name="gender" value="1" > Male
+                          <input type="radio" name="gender" value="2" > Female
+                          <input type="radio" name="gender" value="3" > Other
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Date of Birth</label>
+                          <input type="text" name="dateOfBirth" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Select medium</label>
+                          <select name="medium" class="form-control">
+                              <option selected disabled>Select</option>
+                              <option value="1">English</option>
+                              <option value="2">Hindi</option>
+                              <option value="3">Urdu</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Select Home</label>
+                          <input type="text" name="home" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Adress</label>
+                            <textarea name="address" class="form-control"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">City</label>
+                          <input type="text" name="city" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Country</label>
+                          <input type="text" name="country" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label class="bmd-label-floating">Postal Code</label>
+                          <input type="text" name="postalCode" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Create</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}

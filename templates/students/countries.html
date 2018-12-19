@@ -1,0 +1,42 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Create New User
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Create New User
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">Create New User</h4>
+                            <p class="card-category">Complete your profile</p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="{% url 'user.index'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-user"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="file" name="myfile">
+                            <button type="submit">Upload</button>
+                          </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     Exams
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    Exams
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+    <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Add Exam</h4>
+                  <p class="card-category">Create new Exam</p>
+                </div>
+                <div class="card-body">
+                  <form method="post" action="{% url 'exam.store'%}">
+                      {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Exam Name </label>
+                          <input type="text" class="form-control" name="examName">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Description</label>
+                          <input type="text" class="form-control" name="description">
+                        </div>
+                      </div>
+
+
+                    <button type="submit" class="btn btn-primary pull-right">Create</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+{% endblock %}
