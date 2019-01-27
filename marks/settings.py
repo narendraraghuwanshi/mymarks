@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'Subject',
     'Medium',
     'Exam',
+    'ExamMarks',
     'SessionYear',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

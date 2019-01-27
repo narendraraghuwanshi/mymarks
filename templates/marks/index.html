@@ -1,13 +1,13 @@
 {% extends "public/body.html" %}
 
 {% block title  %}
-     Exam marks
+     {{ exam.courseExam.course.courseName }} :: {{ exam.courseExam.exam.examName }} Marks Manage
 {% endblock %}
 
 
 
 {% block pagetitle %}
-    Exam marks
+    {{ exam.courseExam.course.courseName }} :: {{ exam.courseExam.exam.examName }}
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,7 @@
                 <div class="card-header card-header-primary">
                     <div class="row">
                         <div class="col-md-8">
-                            <h4 class="card-title">Exam marks</h4>
+                            <h4 class="card-title">{{ exam.courseExam.course.courseName }} :: {{ exam.courseExam.exam.examName }} Exams</h4>
 {#                            <p class="card-category">Complete your profile</p>#}
                         </div>
                         <div class="col-md-3">
@@ -30,7 +30,31 @@
 
                 </div>
                 <div class="card-body table-responsive">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Roll NUmber</th>
+                            {% for subject in exam.courseExamSubject.all %}
+                                <th>{{ subject.subject.subjectName }}</th>
+                            {% endfor %}
+                            <th>Result</th>
+                            <th>Options</th>
+                        </tr>
+                        {% for student in exam.courseexam.all %}
+                            <tr>
+                                <td>{{ student.student.user.first_name }} {{ student.student.user.last_name }}</td>
+                                <td>{{ student.student.rollNumber }}</td>
 
+
+                                {% for mark in student.markstudent.all %}
+                                    <td title="{{ mark.examSubject.subject.subjectName }}">{{ mark.mark }}</td>
+                                {% endfor %}
+                                <td title="Result">{{ student.result }}</td>
+                                <td><a href="{% url 'marks.student' exam.id student.id %} "><i class="material-icons">edit</i></a></td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
                 </div>
               </div>
             </div>

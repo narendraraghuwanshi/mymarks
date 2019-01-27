@@ -2,6 +2,7 @@ from django.shortcuts import render,get_object_or_404
 from django.shortcuts import redirect
 from django_tables2 import RequestConfig
 from SessionYear.models import SessionYear,SessionCourseExam, SessionCourseExamStudents
+from ExamMarks.models import SessionExamMarks
 from django.http import HttpResponseRedirect
 from SessionYear.table import SessionYearTable
 from Exam.models import ExamCourse
@@ -71,7 +72,12 @@ def detail(request,id):
         # sessioncourse.students.add(*students)
         sessioncourse.save()
         for student in students:
-            SessionCourseExamStudents(courseexam_id=sessioncourse.id, student_id=student.user_id)
+            stu= SessionCourseExamStudents(courseexam_id=sessioncourse.id, student_id=student.user_id)
+            stu.save()
+            for sub in subject:
+                SessionExamMarks(sessionStudent_id=stu.id,examSubject_id=sub.id).save()
+
+
         messages.success(request, 'All Data Saved successfully.')
         # return HttpResponseRedirect('/session/'+id)
         return redirect('session.detail', id=id)

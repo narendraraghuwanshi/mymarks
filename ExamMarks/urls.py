@@ -10,7 +10,7 @@ urlpatterns = [
     # ex: marks/store/
     # path('store', views.store, name='marks.store'),
     # ex: marks/5/
-    # path('<int:id>', views.detail, name='marks.detail'),
+    path('<int:id>/students/<int:idd>', views.student, name='marks.student'),
     # ex: marks/5/edit
     # path('<int:id>/edit', views.edit, name='marks.edit'),
     # ex: marks/5/update

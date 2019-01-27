@@ -1,0 +1,104 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+     {{ exam.courseExam.course.courseName }} :: {{ exam.courseExam.exam.examName }} Marks Manage
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    {{ exam.courseExam.course.courseName }} :: {{ exam.courseExam.exam.examName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title">{{ exam.courseExam.course.courseName }} :: {{ exam.courseExam.exam.examName }} Exams - Enter Marks</h4>
+{#                            <p class="card-category">Complete your profile</p>#}
+                        </div>
+                        <div class="col-md-3">
+{#                            <a href="{% url 'session.create'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Add</a>#}
+{#                            <a href="{% url 'students.excel'  %}" class="btn btn-sm btn-success float-right"><i class="fa fa-file-excel"></i> Excel</a>#}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body table-responsive">
+                    <form method="post">
+                    {% csrf_token %}
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Student Name</th>
+                            <td colspan="3">{{ student.student.user.first_name }} {{ student.student.user.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Roll Number</th>
+                            <td colspan="3">{{ student.student.rollNumber }}</td>
+                        </tr>
+                        <tr>
+                            <th>Subject Name</th>
+                            <th>Minimum Marks</th>
+                            <th>Obtain Marks</th>
+                            <th>Maximum Marks</th>
+                        </tr>
+                        {% for mark in student.markstudent.all %}
+                        <tr>
+                            <td>{{ mark.examSubject.subject.subjectName }}</td>
+                            <td>{{ mark.examSubject.minMarks }}</td>
+                            <td>
+                                <input type="number" name="{{ mark.id }}" id="{{ mark.id }}" required value="{{ mark.mark }}" onblur="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+                                <span id="error_{{ mark.id }}"></span>
+                            </td>
+                            <td>{{ mark.examSubject.maxMarks }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                        <button class="btn btn-success pull-right" type="submit">Update</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<style>
+.alert-sm{
+    padding: 0px 20px !important;
+}
+</style>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <script>
+        function Checkdata(val,min,max,id){
+            if(parseFloat(val)<parseFloat(min)){
+                $('#error_'+id).html('<div class="alert alert-sm alert-warning">Input value is Less then minimum Value</div>');
+                $('#'+id).focus();
+                return false;
+            }
+            else if(parseFloat(val)>parseFloat(max))
+            {
+                $('#error_'+id).html('<div class="alert alert-sm alert-danger">Input value is Greater then Maximum Value</div>');
+                $('#'+id).focus();
+                return false;
+            }
+            else{
+                $('#error_'+id).html('');
+                return true;
+            }
+        }
+
+
+    </script>
+{% endblock %}

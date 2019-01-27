@@ -8,8 +8,8 @@ from .tables import StudentsTable
 from django_tables2 import RequestConfig
 from Medium.models import Medium
 from django.contrib import messages
-from tablib import Dataset
 from django.core.files.storage import FileSystemStorage
+import django_excel
 import os
 
 # Create your views here.
@@ -146,16 +146,43 @@ def delete(request,id):
 def excel(request):
     if request.method == 'POST':
         if len(request.FILES) != 0:
-            excel = request.FILES['excel']
-            dataset = Dataset()
-            import_data = dataset.load(excel.read())
-            student = Students()
-            result = student.import_data(dataset, dry_run=True)  # Test the data import
-
-            if not result.has_errors():
-                student.import_data(dataset, dry_run=False)  # Actually import now
-
-            print(excelData)
+            exceldata = django_excel.ExcelMixin.get_array(request.FILES['excel'])
+            exceldata.pop(0)
+            for data in exceldata:
+                user = User(
+                    first_name=data[0],
+                    last_name=data[1],
+                    username=data[4],
+                    # email = data['email'],
+                    is_superuser=False,
+                    is_staff=False,
+                    is_active=True,
+                    # is_student  = True
+                )
+                user.save()
+                user.students.fatherName = data[2]
+                user.students.motherName = data[3]
+                user.students.rollNumber = data[4]
+                user.students.enrollmentNumber = data[5]
+                user.students.scholarshipNumber = data[6]
+                user.students.adhaarNumber = data[7]
+                user.students.familyId = data[8]
+                user.students.sssmId = data[9]
+                user.students.bankName = data[10]
+                user.students.bankIfsc = data[11]
+                user.students.accountNumber = data[12]
+                user.students.mobileNumber = data[13]
+                user.students.gender = data[14]
+                user.students.medium = data[15]
+                user.students.dateOfBirth = data[16]
+                user.students.address = data[17]
+                user.students.country_id = data[18]
+                user.students.state_id = data[19]
+                user.students.city_id = data[20]
+                user.students.postalCode = data[21]
+                user.students.course_id = data[22]
+                user.is_student = True
+                user.save()
 
     return render(request, 'students/excel.html')
 

@@ -22,8 +22,9 @@ class SessionYear(models.Model):
 class SessionCourseExam(models.Model):
     session = models.ForeignKey(SessionYear,on_delete=models.CASCADE,related_name='session')
     courseExam = models.ForeignKey(ExamCourse,on_delete=models.CASCADE, related_name='courseExam')
-    courseExamSubject      = models.ManyToManyField(ExamSubject)
+    courseExamSubject      = models.ManyToManyField(ExamSubject,related_name='sessionsubject')
     # students        = models.ManyToManyField(Students) #remove becouse we need student result and rank column
+    is_deleted = models.BooleanField(default=False)
 
 class SessionCourseExamStudents(models.Model):
     courseexam  = models.ForeignKey(SessionCourseExam,on_delete=models.CASCADE,related_name='courseexam')
@@ -31,12 +32,6 @@ class SessionCourseExamStudents(models.Model):
     remark      = models.TextField(null=True)
     result      = models.CharField(max_length=250, null=True)
     rank        = models.CharField(max_length=100)
+    total        = models.FloatField(null=True)
     created_at  = models.DateTimeField(auto_now_add=True, null=True)
     updated_at  = models.DateTimeField(auto_now=True, null=True)
-
-class SessionExamMarks(models.Model):
-    sessionStudent      = models.ForeignKey(Students,on_delete=models.CASCADE)
-    marks               = models.CharField(max_length=10,null=True)
-    is_deleted = models.BooleanField(default=False)
-    created_at          = models.DateTimeField(auto_now_add=True, null=True)
-    updated_at          = models.DateTimeField(auto_now=True, null=True)
