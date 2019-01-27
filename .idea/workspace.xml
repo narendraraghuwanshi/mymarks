@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5718bb6f-49c1-4937-a096-188d00af51e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/marks/student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/SessionYear/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SessionYear/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/marks/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/marks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marks/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/session/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/session/detail.html" afterDir="false" />
-    </list>
+    <list default="true" id="5718bb6f-49c1-4937-a096-188d00af51e6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/marks/student.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="810">
               <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
             </state>
           </provider>
@@ -97,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ExamMarks/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -109,7 +96,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exam/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="825">
               <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="27" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
@@ -349,17 +336,18 @@
       <workItem from="1547559233002" duration="7253000" />
       <workItem from="1548265183367" duration="4809000" />
       <workItem from="1548519224520" duration="3207000" />
+      <workItem from="1548562262823" duration="231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176056000" />
+    <option name="totallyTimeSpent" value="176287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="875" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2072072" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20978121" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -372,7 +360,7 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.40080428" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.40080428" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.328877" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -863,10 +851,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python3.6/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/marks/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/marks/student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -902,7 +904,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Exam/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="825">
           <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="27" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
@@ -910,24 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python3.6/json/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/marks/student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ExamMarks/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
