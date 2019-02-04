@@ -48,11 +48,26 @@
                             <th>Maximum Marks</th>
                         </tr>
                         {% for mark in student.markstudent.all %}
+
+
+
                         <tr>
                             <td>{{ mark.examSubject.subject.subjectName }}</td>
                             <td>{{ mark.examSubject.minMarks }}</td>
                             <td>
-                                <input type="number" name="{{ mark.id }}" id="{{ mark.id }}" required value="{{ mark.mark }}" onblur="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+                            {% if mark.examSubject.subject.isGrade == False %}
+                                <input type="number" name="{{ mark.id }}" id="{{ mark.id }}" required value="{{ mark.marks }}" onblur="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+
+                                {% else %}
+                                <select name="{{ mark.id }}" id="{{ mark.id }}" required  onchange="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+                                <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} >A</option>
+                                <option value="B" {% if mark.marks == 'B' %} selected {% endif %} >B</option>
+                                <option value="C" {% if mark.marks == 'C' %} selected {% endif %} >C</option>
+                                <option value="D" {% if mark.marks == 'D' %} selected {% endif %} >D</option>
+                                <option value="E" {% if mark.marks == 'E' %} selected {% endif %} >E</option>
+                                </select>
+                                {% endif %}
+
                                 <span id="error_{{ mark.id }}"></span>
                             </td>
                             <td>{{ mark.examSubject.maxMarks }}</td>

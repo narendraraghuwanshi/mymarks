@@ -44,8 +44,11 @@
                                     <td>{{ subject.minMarks }}</td>
                                     <td>{{ subject.maxMarks }}</td>
                                     <td>
+
                                         <a href="?delete={{ subject.id }}" id="Subtd{{ subject.id }}"><i class="material-icons" style="color: #de1b0c">delete</i></a>
+                                         {% if subject.subject.isGrade == False %}
                                         <a  onclick="editForm('{{ subject.subject.subjectName }}',{{ subject.id }},'{{ subject.minMarks }}','{{ subject.maxMarks }}')"><i class="material-icons" style="color: #aa00ff">edit</i></a>
+                                        {% endif %}
                                     </td>
                                 </tr>
                                 {% endif %}

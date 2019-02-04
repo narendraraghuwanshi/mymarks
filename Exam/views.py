@@ -8,6 +8,8 @@ from .tables import ExamTable
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from pprint import pprint
+from django.http import JsonResponse
 
 # Create your views here.
 @login_required(login_url='login')
@@ -111,4 +113,7 @@ def subject(request, id):
         return redirect('exam.subject', id)
     exam = get_object_or_404(ExamCourse, id=id)
     subjects = Subject.objects.filter(is_deleted=False).all()
+    pprint(vars(subjects))
+    # pprint(subjects[1])
+
     return render(request, 'exam/subject.html', {'exam': exam, 'masterSubjects':subjects})

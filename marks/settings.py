@@ -16,6 +16,9 @@ from django.utils.translation import ugettext_lazy as _
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
+                        "django_excel.TemporaryExcelFileUploadHandler")
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -46,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_tables2',
-    'import_export',
+    # 'import_export',
 
 ]
 
@@ -110,16 +113,23 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # }
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mymarks',
+#         'USER': 'root',
+#         'PASSWORD': 'rtspl',
+#         'HOST': 'localhost',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mymarks',
-        'USER': 'root',
-        'PASSWORD': 'rtspl',
-        'HOST': 'localhost',
+        'ENGINE': 'djongo',
+        'NAME': 'gitmymark',
     }
 }
-
 
 
 # Password validation

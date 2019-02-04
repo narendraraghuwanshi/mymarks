@@ -30,12 +30,13 @@
 
                 </div>
                 <div class="card-body table-responsive">
+                {% csrf_token %}
                     <table class="table table-striped">
                         <tr>
                             <th>Student Name</th>
                             <th>Roll NUmber</th>
                             {% for subject in exam.courseExamSubject.all %}
-                                <th>{{ subject.subject.subjectName }}</th>
+                                <th >{{ subject.subject.subjectName }} <i class="material-icons edit_submarkth" id="edit_submarkth_{{forloop.counter}}">edit</i></th>
                             {% endfor %}
                             <th>Result</th>
                             <th>Options</th>
@@ -43,17 +44,14 @@
                         {% for student in exam.courseexam.all %}
                             <tr>
                                 <td>{{ student.student.user.first_name }} {{ student.student.user.last_name }}</td>
-                                <td>{{ student.student.rollNumber }}</td>
-
-
-                                {% for mark in student.markstudent.all %}
-                                    <td title="{{ mark.examSubject.subject.subjectName }}">{{ mark.mark }}</td>
+                                <td>{{ student.student.rollNumber   }}</td>
+                                     {% for mark in student.markstudent.all %}
+                                <td class="editsubmark_{{forloop.counter}}" id="subid_{{ mark.id}}">{{ mark.marks}}</td>
                                 {% endfor %}
                                 <td title="Result">{{ student.result }}</td>
                                 <td><a href="{% url 'marks.student' exam.id student.id %} "><i class="material-icons">edit</i></a></td>
                             </tr>
                         {% endfor %}
-
                     </table>
                 </div>
               </div>
@@ -65,6 +63,14 @@
 
 {% block style %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<style>
+.editcol{
+
+    border: 1px solid gainsboro;
+    box-shadow: 1px 1px #888888;
+}
+</style>
+
 
 {% endblock %}
 
@@ -85,5 +91,56 @@
     }
 });
         }
+
+        $(document).ready(function(){
+            $('.edit_submarkth').click(function(){
+            var col = this.id;
+            var col_id = col.split('_')[2];
+          var text =   $('#'+col).text();
+          if(text =='edit'){
+          $('#'+col).text('save');
+
+            $('.editsubmark_'+col_id).attr('contenteditable','true').addClass("editcol");
+           }else if(text =='save'){
+
+               jsonObj = [];
+
+              $('.editsubmark_'+col_id).each(function() {
+                  var coloumid = this.id;
+                  var colidobj = coloumid.split('_');
+                  item = {}
+                    item [colidobj[1]] = $('#'+coloumid).text();
+
+                    // item ['marks'] = $('#'+coloumid).text();
+                    jsonObj.push(item);
+                });
+
+               console.log(jsonObj);
+                        var token = $("input[name=csrfmiddlewaretoken]").val();
+
+                     $.ajax({
+                            url: '{% url "marks.updatemarksajax" %}',
+                            type: 'POST',
+                            data: {'csrfmiddlewaretoken':token,  'marks': jsonObj},
+                            dataType: 'json',
+
+                            success: function (data) {
+                             console.log(data);
+                            }
+                          });
+
+             $('#'+col).text('edit');
+            $('.editsubmark_'+col_id).attr('contenteditable','false').removeClass("editcol");
+
+
+
+           }
+
+            });
+
+        });
+
+
     </script>
 {% endblock %}
+

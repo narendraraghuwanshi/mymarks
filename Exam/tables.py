@@ -40,8 +40,8 @@ class ExamTable(tables.Table):
 
     def render_Operations(self, record):
         return format_html(
-            '<a href="{}/edit" class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></a>  <a href="{}/detail" class="btn btn-sm btn-warning"><i class ="fa fa-eye" aria-hidden="true" > </i></a>  <a onclick="Delete({})" class="btn btn-sm btn-danger"><i id="delete_{}" class="fa fa-trash delete_course"></i></a>',
-            record.id, record.id, record.id,record.id)
+            '<a href="{}/edit" class="btn btn-sm btn-success"><i class="fa fa-pencil"></i></a>  <a href="{}/detail" class="btn btn-sm btn-warning"><i class ="fa fa-eye" aria-hidden="true" > </i></a> <a href="{}/subject" class="btn btn-sm btn-primary"><i class ="fa fa-plus" aria-hidden="true" > </i></a> <a onclick="Delete({})" class="btn btn-sm btn-danger"><i id="delete_{}" class="fa fa-trash delete_course"></i></a>',
+            record.id, record.id, record.id,record.id,record.id)
 
     class Meta:
         model = Exam

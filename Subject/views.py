@@ -23,12 +23,12 @@ def create(request):
 def store(request):
     if request.method == 'POST':
         data = request.POST
-        subject = get_object_or_404(SubjectType, pk=data['type'])
+        # subject = get_object_or_404(SubjectType, pk=data['type'])
 
         subject = Subject(
             subjectName=data['subjectName'],
             isGrade=data['isGrade'],
-            type=subject,
+            type_id=data['type'],
             description=data['description'],
         )
         subject.save()
