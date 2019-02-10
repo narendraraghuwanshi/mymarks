@@ -49,7 +49,6 @@ def update(request,id):
     if request.method == 'POST':
         data = request.POST
         update = Course.objects.get(id=id)
-
         update.class_name= data['class_name']
         update.class_section= data['class_section']
         update.grade_system= int(data['grade_system'])

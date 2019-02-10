@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 from Course.models import Course
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from safedelete.models import SafeDeleteModel
-from safedelete.models import NO_DELETE
+# from safedelete.models import SafeDeleteModel
+# from safedelete.models import NO_DELETE
 
 class Countries(models.Model):
     countryName = models.CharField(max_length=100, blank=True, null=True)
@@ -35,7 +35,7 @@ def user_directory_path(instance, filename):
 
 
 class Students(models.Model):
-    _safedelete_policy = NO_DELETE
+    # _safedelete_policy = NO_DELETE
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True,blank=True)
     course = models.ForeignKey(Course,null=True,blank=True,on_delete=models.CASCADE, related_name='students')
     image = models.FileField(upload_to=user_directory_path,blank=True)

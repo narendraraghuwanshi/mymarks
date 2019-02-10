@@ -23,7 +23,7 @@
 {#                            <p class="card-category">Complete your profile</p>#}
                         </div>
                         <div class="col-md-3">
-{#                            <a href="{% url 'session.create'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Add</a>#}
+                            <a href="{% url 'marks.generate' exam.id %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Generate</a>
 {#                            <a href="{% url 'students.excel'  %}" class="btn btn-sm btn-success float-right"><i class="fa fa-file-excel"></i> Excel</a>#}
                         </div>
                     </div>
@@ -47,7 +47,7 @@
 
 
                                 {% for mark in student.markstudent.all %}
-                                    <td title="{{ mark.examSubject.subject.subjectName }}">{{ mark.mark }}</td>
+                                    <td title="{{ mark.examSubject.subject.subjectName }}">{{ mark.marks }}</td>
                                 {% endfor %}
                                 <td title="Result">{{ student.result }}</td>
                                 <td><a href="{% url 'marks.student' exam.id student.id %} "><i class="material-icons">edit</i></a></td>

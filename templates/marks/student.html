@@ -52,7 +52,7 @@
                             <td>{{ mark.examSubject.subject.subjectName }}</td>
                             <td>{{ mark.examSubject.minMarks }}</td>
                             <td>
-                                <input type="number" name="{{ mark.id }}" id="{{ mark.id }}" required value="{{ mark.mark }}" onblur="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+                                <input type="number" name="{{ mark.id }}" id="{{ mark.id }}" required value="{{ mark.marks }}" onblur="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
                                 <span id="error_{{ mark.id }}"></span>
                             </td>
                             <td>{{ mark.examSubject.maxMarks }}</td>

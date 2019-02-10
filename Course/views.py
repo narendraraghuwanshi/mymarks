@@ -103,3 +103,7 @@ def delete(request,id):
 
         return HttpResponseRedirect('/class/')
 
+# template class
+def template(request,id):
+        exam = get_object_or_404(ExamCourse, id=id)
+        return render(request, 'schoolclass/template.html', {'exam': exam})

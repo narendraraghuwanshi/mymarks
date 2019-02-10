@@ -33,5 +33,6 @@ class SessionCourseExamStudents(models.Model):
     result      = models.CharField(max_length=250, null=True)
     rank        = models.CharField(max_length=100)
     total        = models.FloatField(null=True)
+    # marks       = models.
     created_at  = models.DateTimeField(auto_now_add=True, null=True)
     updated_at  = models.DateTimeField(auto_now=True, null=True)
