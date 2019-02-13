@@ -56,10 +56,10 @@
                             <td>{{ mark.examSubject.minMarks }}</td>
                             <td>
                             {% if mark.examSubject.subject.isGrade == False %}
-                                <input type="number" name="{{ mark.id }}" id="{{ mark.id }}" required value="{{ mark.marks }}" onblur="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+                                <input type="number" name="{{ mark.id }}" id="{{ mark.id }}" required value="{{ mark.marks }}" onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
 
                                 {% else %}
-                                <select name="{{ mark.id }}" id="{{ mark.id }}" required  onchange="Checkdata(this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+                                <select name="{{ mark.id }}" id="{{ mark.id }}" required  onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
                                 <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} >A</option>
                                 <option value="B" {% if mark.marks == 'B' %} selected {% endif %} >B</option>
                                 <option value="C" {% if mark.marks == 'C' %} selected {% endif %} >C</option>
@@ -96,14 +96,15 @@
 {% block script %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script>
-        function Checkdata(val,min,max,id){
+        function Checkdata(e,val,min,max,id){
             if(parseFloat(val)<parseFloat(min)){
                 $('#error_'+id).html('<div class="alert alert-sm alert-warning">Input value is Less then minimum Value</div>');
-                $('#'+id).focus();
-                return false;
+                // $('#'+id).focus();
+                // return false;
             }
             else if(parseFloat(val)>parseFloat(max))
             {
+                $(e).val(Math.max(Math.min(val, max), -100));
                 $('#error_'+id).html('<div class="alert alert-sm alert-danger">Input value is Greater then Maximum Value</div>');
                 $('#'+id).focus();
                 return false;

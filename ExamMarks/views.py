@@ -33,22 +33,32 @@ def student(request,id,idd):
     student = SessionCourseExamStudents.objects.filter(courseexam_id=id,id=idd).first()
     return render(request, 'marks/student.html', {'exam': exam,'student':student})
 
-def updatemarksajax(request):
+def updatemarks(request):
     if request.method == 'POST':
-        data = request.POST.getlist('data', None)
+        data = request.POST;
 
-        print(data)
-
-        for marks in data:
-            # SessionCourseExamStudents
-            if(marks != 'csrfmiddlewaretoken'):
-                print(marks)
-
-                # smarks = SessionCourseExamStudents.objects.get(id=marks)
-                # smarks.marks = data[marks];
-                # smarks.save()
-
-
-
-
+    for datanew in data:
+        if (datanew != 'csrfmiddlewaretoken'):
+            marks = get_object_or_404(SessionExamMarks, id=datanew)
+            marks.marks = data[datanew]
+            marks.save()
     return HttpResponse('success')
+
+
+
+def updatemarksajax():
+    return  HttpResponse('dfdfdf')
+
+
+def editstudentsubjectmarks(request,id,subject ):
+    # marks = get_object_or_404(SessionExamMarks, examSubject_id=subject)
+    marks = SessionExamMarks.objects.filter( examSubject_id=subject)
+
+
+    for mark in marks:
+        print(mark.sessionStudent.student.user.first_name)
+        print(mark.examSubject.subject.subjectName)
+
+
+    return render(request, 'marks/subject_mark.html', {'marks':marks} )
+    # return HttpResponse('ddddd')

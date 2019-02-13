@@ -36,7 +36,7 @@
                             <th>Student Name</th>
                             <th>Roll NUmber</th>
                             {% for subject in exam.courseExamSubject.all %}
-                                <th >{{ subject.subject.subjectName }} <i class="material-icons edit_submarkth" id="edit_submarkth_{{forloop.counter}}">edit</i></th>
+                                <th >{{ subject.subject.subjectName }} <a href="{% url 'marks.subject' exam.id subject.id %} "><i class="material-icons edit_submarkth" id="edit_submarkth_{{forloop.counter}}">edit</i></a></th>
                             {% endfor %}
                             <th>Result</th>
                             <th>Options</th>
@@ -118,16 +118,7 @@
                console.log(jsonObj);
                         var token = $("input[name=csrfmiddlewaretoken]").val();
 
-                     $.ajax({
-                            url: '{% url "marks.updatemarksajax" %}',
-                            type: 'POST',
-                            data: {'csrfmiddlewaretoken':token,  'marks': jsonObj},
-                            dataType: 'json',
 
-                            success: function (data) {
-                             console.log(data);
-                            }
-                          });
 
              $('#'+col).text('edit');
             $('.editsubmark_'+col_id).attr('contenteditable','false').removeClass("editcol");
