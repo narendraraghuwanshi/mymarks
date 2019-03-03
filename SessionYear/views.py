@@ -60,6 +60,11 @@ def detail(request,id):
     sessionYr = SessionYear.objects.get(id=id)
     if request.method == 'POST':
         data = request.POST
+        check = SessionCourseExam.objects.filter(courseExam_id=data['exam_id'],session_id=id).first()
+        if(check):
+            messages.warning(request, 'Exam Already Added.')
+            return redirect('session.detail', id=id)
+
         examcourse = ExamCourse.objects.filter(id=data['exam_id']).first()
         sessioncourse = SessionCourseExam(
             courseExam_id = data['exam_id'],

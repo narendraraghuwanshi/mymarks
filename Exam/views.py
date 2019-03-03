@@ -44,7 +44,7 @@ def store(request):
         return HttpResponseRedirect('/exam/')
     else:
         messages.warning(request, 'Exam Created unsuccessfully. Try Again')
-        return HttpResponseRedirect('/Exam/create')
+        return HttpResponseRedirect('/exam/create')
 
 
 
@@ -53,7 +53,7 @@ def store(request):
 
 def edit(request,id):
     examdata = get_object_or_404(Exam, id=id)
-    return render(request, 'Exam/edit.html', {'examdata': examdata})
+    return render(request, 'exam/edit.html', {'examdata': examdata})
 
 
 def detail(request,id):

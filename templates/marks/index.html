@@ -92,45 +92,6 @@
 });
         }
 
-        $(document).ready(function(){
-            $('.edit_submarkth').click(function(){
-            var col = this.id;
-            var col_id = col.split('_')[2];
-          var text =   $('#'+col).text();
-          if(text =='edit'){
-          $('#'+col).text('save');
-
-            $('.editsubmark_'+col_id).attr('contenteditable','true').addClass("editcol");
-           }else if(text =='save'){
-
-               jsonObj = [];
-
-              $('.editsubmark_'+col_id).each(function() {
-                  var coloumid = this.id;
-                  var colidobj = coloumid.split('_');
-                  item = {}
-                    item [colidobj[1]] = $('#'+coloumid).text();
-
-                    // item ['marks'] = $('#'+coloumid).text();
-                    jsonObj.push(item);
-                });
-
-               console.log(jsonObj);
-                        var token = $("input[name=csrfmiddlewaretoken]").val();
-
-
-
-             $('#'+col).text('edit');
-            $('.editsubmark_'+col_id).attr('contenteditable','false').removeClass("editcol");
-
-
-
-           }
-
-            });
-
-        });
-
 
     </script>
 {% endblock %}

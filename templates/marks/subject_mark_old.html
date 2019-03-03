@@ -32,13 +32,13 @@
                 <div class="card-body table-responsive">
 
 
-                      <form  method="post" action="{% url 'marks.updatemarks' id %}">
+                      <form  method="post" action="{% url 'marks.updatemarks' marks.id %}">
                         {% csrf_token %}
 
                         <table class="table table-striped">
                         <tr>
                             <th>Subject Name</th>
-                            <td colspan="3">{{id}}  </td>
+                            <td colspan="3">dfdff</td>
                         </tr>
 
 
@@ -48,35 +48,15 @@
                             <th>Obtain Marks</th>
                             <th>Maximum Marks</th>
                             </tr>
-                            {% for student in exam.courseexam.all %}
-                            <tr>
-                                <td>{{ student.student.user.first_name }} {{ student.student.user.last_name }}</td>
-                                <td>{{ student.student.rollNumber   }}</td>
-                                     {% for mark in student.markstudent.all %}
+                            {% for mark in marks %}
+                             <tr>
+                             <td>{{mark.id}} - {{mark.sessionStudent.student.user.first_name}} {{mark.sessionStudent.student.user.last_name}}</td>
+                             <td>{{mark.sessionStudent.student.rollNumber}}</td>
+                             <td><input type="text" class="form-control" name="{{mark.id}}" value="{{mark.marks}}" onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')"></td>
+                             <td>{{mark.marks}}</td>
+</tr>
 
-                                        {% if mark.examSubject_id == subjectId %}
-                                            <td  >
-                                                {% if mark.examSubject.subject.isGrade == False %}
-                                                <input type="text" class="form-control" name="{{mark.id}}" value="{{mark.marks|default_if_none:''}}" onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')">
-                                                {% else %}
-                                                    <select name="{{ mark.id }}" id="{{ mark.id }}" required  onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
-                                                    <option value="A"   selected disabled>Select Please</option>
-                                                    <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} >A</option>
-                                                    <option value="B" {% if mark.marks == 'B' %} selected {% endif %} >B</option>
-                                                    <option value="C" {% if mark.marks == 'C' %} selected {% endif %} >C</option>
-                                                    <option value="D" {% if mark.marks == 'D' %} selected {% endif %} >D</option>
-                                                    <option value="E" {% if mark.marks == 'E' %} selected {% endif %} >E</option>
-                                                    </select>
-                                                {% endif %}
-
-                                                <span id="error_{{ mark.id }}"></span> </td>
-                                            <td>{{ mark.examSubject.maxMarks }}</td>
-                                        {% endif %}
-                                    {% endfor %}
-                                <!--<td title="Result">{{ student.result }}</td>-->
-
-                            </tr>
-                        {% endfor %}
+                            {% endfor %}
 </table>
 <input type="submit" value="Update marks">
 </form>
