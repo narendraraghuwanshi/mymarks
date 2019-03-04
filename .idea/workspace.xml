@@ -1,86 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46726bd1-afe4-4356-8cb2-2f9e41582d9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SessionYear/migrations/0002_auto_20190127_1053.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marks/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="81a2f3e2-c6d6-444b-80b9-3954588e9949" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marks/middleware.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/marks/subject_mark.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/marks/subject_mark_old.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/marks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/marks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Course/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/migrations/0002_auto_20181204_1813.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/migrations/0003_auto_20181206_1518.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/migrations/0004_auto_20181210_1853.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/migrations/0005_auto_20181220_1807.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exam/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Exam/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/tables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exam/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/migrations/0002_auto_20190115_1348.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/migrations/0002_sessionexammarks_sessionstudent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExamMarks/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ExamMarks/migrations/0002_sessionexammarks_sessionstudent.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ExamMarks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ExamMarks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Medium/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Medium/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/SessionYear/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0002_auto_20181206_1823.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0003_auto_20181206_1855.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0004_auto_20181206_1858.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0005_auto_20181216_2029.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0006_auto_20181220_1734.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0007_sessioncourseexam_is_deleted.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0008_auto_20181220_1812.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/migrations/0002_auto_20181210_1808.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Medium/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0002_auto_20190127_1053.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SessionYear/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SessionYear/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Students/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Students/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Subject/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Subject/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Subject/migrations/0002_auto_20181206_1707.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Subject/migrations/0003_auto_20181210_1728.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Subject/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Subject/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Subject/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/marks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/marks/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exam/subject.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exam/subject.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/excel/students.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/static/excel/students.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/images.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/images.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/images_2Jp51BE.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/images_2Jp51BE.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/images_iMkgKMJ.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/images_iMkgKMJ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/profile/12/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/12/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/profile/2/33302285_1825965630798731_968759942678839296_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/2/33302285_1825965630798731_968759942678839296_n.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/upload/profile/2/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/2/user.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/marks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marks/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/marks/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marks/student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate.csh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/activate.fish" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/csv2ods" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/django-admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/easy_install-3.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/mailodf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odf2mht" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odf2xhtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odf2xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odfimgimport" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odflint" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odfmeta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odfoutline" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/odfuserfield" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/pip3.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/python" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/python3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/python3.6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/runxlrd.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/sqlformat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/bin/xml2odf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib64" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/csv2ods.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/mailodf.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odf2mht.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odf2xhtml.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odf2xml.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odfimgimport.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odflint.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odfmeta.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odfoutline.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/odfuserfield.1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/share/man/man1/xml2odf.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/public/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/body.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/schoolclass/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schoolclass/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/students/excel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/students/excel.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,31 +48,74 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/Course/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/schoolclass/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+            <state relative-caret-position="1065">
+              <caret line="71" selection-start-line="71" selection-end-line="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Students/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1305">
+              <caret line="192" column="62" selection-start-line="192" selection-start-column="62" selection-end-line="192" selection-end-column="62" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#1158#3369#0" />
+                <element signature="e#3396#3441#0" />
+                <element signature="e#3469#3934#0" />
+                <element signature="e#3964#5726#0" />
+                <element signature="e#5756#6105#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="true" current-in-tab="true">
-        <entry file="remoteDeploymentFS://&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/templates/schoolclass/detail.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/students/create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="3540">
+              <caret line="236" selection-start-line="236" selection-end-line="272" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/students/excel.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2265">
+              <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Students/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -125,25 +128,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/marks/settings.py" />
-        <option value="$PROJECT_DIR$/ExamMarks/views.py" />
-        <option value="$PROJECT_DIR$/templates/marks/student.html" />
-        <option value="$PROJECT_DIR$/templates/marks/index.html" />
-        <option value="&lt;54e890dd-0da0-46d9-adc2-180ce5ce27c0&gt;/var/log/nginx/error.log" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/var/www/mymarks/requirements.txt" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/home/ubuntu/mymarks/marks/middleware/SubdoainMiddleware.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/home/ubuntu/mymarks/marks/settings.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/home/ubuntu/mymarks/marks/middleware.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/marks/middleware.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/SessionYear/views.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/templates/marks/subject_mark_old.html" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/ExamMarks/urls.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/ExamMarks/views.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/templates/marks/index.html" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/templates/marks/subject_mark.html" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/templates/marks/student.html" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/Course/views.py" />
-        <option value="&lt;a97b3847-aca2-483d-a94e-58de775c07e9&gt;/templates/schoolclass/detail.html" />
+        <option value="&lt;c290e7ce-fc01-4a36-a487-72e6f92a4be3&gt;/templates/schoolclass/detail.html" />
+        <option value="&lt;c290e7ce-fc01-4a36-a487-72e6f92a4be3&gt;/Exam/tables.py" />
+        <option value="$PROJECT_DIR$/Exam/tables.py" />
+        <option value="$PROJECT_DIR$/templates/public/body.html" />
+        <option value="$PROJECT_DIR$/templates/schoolclass/detail.html" />
+        <option value="$PROJECT_DIR$/Students/views.py" />
+        <option value="$PROJECT_DIR$/templates/students/excel.html" />
+        <option value="$PROJECT_DIR$/Students/models.py" />
       </list>
     </option>
   </component>
@@ -157,6 +149,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,26 +157,21 @@
               <item name="marks" type="b2602c69:ProjectViewProjectNode" />
               <item name="marks" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="marks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="marks" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/bin" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -231,34 +219,29 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46726bd1-afe4-4356-8cb2-2f9e41582d9a" name="Default Changelist" comment="" />
-      <created>1549778634710</created>
+      <changelist id="81a2f3e2-c6d6-444b-80b9-3954588e9949" name="Default Changelist" comment="" />
+      <created>1551694893384</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549778634710</updated>
-      <workItem from="1549778638147" duration="2184000" />
-      <workItem from="1549781203031" duration="8031000" />
-      <workItem from="1550077630167" duration="5158000" />
-      <workItem from="1551034572290" duration="1827000" />
-      <workItem from="1551114323886" duration="3779000" />
-      <workItem from="1551287045837" duration="1027000" />
-      <workItem from="1551600239890" duration="994000" />
-      <workItem from="1551606847824" duration="17068000" />
+      <updated>1551694893384</updated>
+      <workItem from="1551694899047" duration="1691000" />
+      <workItem from="1551696916214" duration="4844000" />
+      <workItem from="1551723141538" duration="200000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40068000" />
+    <option name="totallyTimeSpent" value="6735000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1600" height="875" extended-state="7" />
+    <frame x="0" y="25" width="1600" height="875" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25546977" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22200772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27479893" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -267,72 +250,104 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29758713" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3941019" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3297587" />
-      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3297587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Remote Host" order="5" visible="true" weight="0.22779922" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.32947233" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32947233" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ExamMarks/views.py">
+    <entry file="file://$PROJECT_DIR$/Exam/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Exam/tables.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+        <state relative-caret-position="240">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/marks/index.html">
+    <entry file="file://$PROJECT_DIR$/templates/public/body.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="439">
+          <caret line="234" column="8" selection-start-line="234" selection-start-column="8" selection-end-line="234" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/marks/student.html">
+    <entry file="file://$PROJECT_DIR$/templates/schoolclass/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="1065">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exam/views.py">
+    <entry file="file://$PROJECT_DIR$/Students/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="44" />
+        <state relative-caret-position="1305">
+          <caret line="192" column="62" selection-start-line="192" selection-start-column="62" selection-end-line="192" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#1158#3369#0" />
+            <element signature="e#3396#3441#0" />
+            <element signature="e#3469#3934#0" />
+            <element signature="e#3964#5726#0" />
+            <element signature="e#5756#6105#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ExamMarks/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/students/create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="3540">
+          <caret line="236" selection-start-line="236" selection-end-line="272" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/templates/students/excel.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-end-line="26" />
+        <state relative-caret-position="2265">
+          <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/marks/settings.py">
+    <entry file="file://$PROJECT_DIR$/Students/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="116" selection-start-line="116" selection-end-line="116" />
+        <state relative-caret-position="304">
+          <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="p4-ProjectCache">
+    <option name="serverState">
+      <list />
+    </option>
+    <option name="clientState">
+      <list />
+    </option>
+    <option name="pendingActions">
+      <list />
+    </option>
+    <option name="changelistState">
+      <State>
+        <option name="lastPendingChangelistId" value="-2" />
+        <option name="linkedChangelistMap">
+          <list />
+        </option>
+        <option name="pendingChangelistMap">
+          <list />
+        </option>
+      </State>
+    </option>
   </component>
 </project>

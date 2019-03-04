@@ -33,7 +33,68 @@
                 <div class="card-body">
                        <form action="{% url 'students.excel' %}" method="post" enctype="multipart/form-data">
                        {% csrf_token %}
-                        <div class="row">
+                         <div class="row">
+                     <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label >Select Course</label>
+                          <select name="course" class="form-control select2">
+                              <option selected disabled>Select</option>
+                              {% for course in courses %}
+                              <option value="{{ course.id }}">{{ course.courseName }}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                          <label >Select medium</label>
+                          <select name="medium" class="form-control select2">
+                              <option selected disabled>Select</option>
+                              {% for medium in mediums %}
+                              <option value="{{ medium.id }}">{{ medium.mediumName }}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label >Country</label>
+                           <select name="country" onchange="SelectCountry(this.value)" class="form-control select2">
+                              <option selected disabled>Select</option>
+                              {% for country in countries %}
+                              <option value="{{ country.id }}" {% if country.id == 101 %} selected {% endif %}>{{ country.countryName }}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label >State</label>
+                           <select name="state" id="State" onchange="SelectState(this.value)" class="form-control select2">
+                              <option selected disabled>Select</option>
+                               {% for state in states %}
+                              <option value="{{ state.id }}" >{{ state.stateName }}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                     <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label >City</label>
+                          <select  id="Cities" name="city" class="form-control select2">
+                              <option selected disabled>Select</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+
+                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group bmd-form-group">
                               <label >Select Excel File</label>
@@ -50,4 +111,42 @@
             </div>
           </div>
         </div>
+{% endblock %}
+
+{% block style %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        $(".flatpicker").flatpickr({
+            dateFormat: "Y-m-d"
+        });
+         $('.select2').select2();
+         function SelectCountry(id) {
+             $.get('{% url 'students.countries' %}?country='+id,function (resp) {
+                 $('#State').html(resp);
+             })
+         }
+
+         function SelectState(id) {
+             $.get('{% url 'students.states' %}?states='+id,function (resp) {
+                 $('#Cities').html(resp);
+             })
+         }
+         function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#Image').attr('src', e.target.result);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    </script>
 {% endblock %}

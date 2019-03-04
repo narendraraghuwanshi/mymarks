@@ -29,7 +29,7 @@ SECRET_KEY = 's3o(ypta_1x+kwu4^nlo5w1*(#d60v)_xz8vlnz7=c1y)@-$nz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'marks.middleware.SubdoainMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -121,14 +122,6 @@ DATABASES = {
         'HOST': 'localhost',
     }
 }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'gitmymark',
-#     }
-# }
 
 
 # Password validation

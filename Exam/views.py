@@ -44,7 +44,7 @@ def store(request):
         return HttpResponseRedirect('/exam/')
     else:
         messages.warning(request, 'Exam Created unsuccessfully. Try Again')
-        return HttpResponseRedirect('/Exam/create')
+        return HttpResponseRedirect('/exam/create')
 
 # edit class
 

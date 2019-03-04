@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="a97b3847-aca2-483d-a94e-58de775c07e9" name="lamp" url="http://13.232.46.172">
+      <webServer id="c290e7ce-fc01-4a36-a487-72e6f92a4be3" name="lamp" url="http://13.232.46.172">
         <fileTransfer host="13.232.46.172" port="22" privateKey="$USER_HOME$/Downloads/LightsailDefaultKey-ap-south-1.pem" rootFolder="/home/ubuntu/mymarks" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

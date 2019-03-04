@@ -59,18 +59,26 @@ def calculation(request,id):
     # return JsonResponse(data)
     return render(request, 'marks/student.html', {'exam': exam,'student':student})
 
-def updatemarksajax(request):
+def updatemarks(request,id):
     if request.method == 'POST':
-        data = request.POST.getlist('data', None)
+        data = request.POST;
 
-        print(data)
+    for datanew in data:
+        if (datanew != 'csrfmiddlewaretoken'):
+            marks = get_object_or_404(SessionExamMarks, id=datanew)
+            marks.marks = data[datanew]
+            marks.save()
+    return HttpResponseRedirect('/marks/%d'%id)
 
-        for marks in data:
-            # SessionCourseExamStudents
-            if(marks != 'csrfmiddlewaretoken'):
-                print(marks)
 
-                # smarks = SessionCourseExamStudents.objects.get(id=marks)
-                # smarks.marks = data[marks];
-                # smarks.save()
-    return HttpResponse('success')
+
+def updatemarksajax():
+    return  HttpResponse('dfdfdf')
+
+
+def editstudentsubjectmarks(request,id,subject ):
+    # marks = get_object_or_404(SessionExamMarks, examSubject_id=subject)
+    exam = SessionCourseExam.objects.filter(is_deleted=False, id=id).first()
+    marks = SessionExamMarks.objects.filter(examSubject_id=subject)
+    return render(request, 'marks/subject_mark.html', {'marks':marks,'id':id,'exam':exam, 'subjectId':subject} )
+    # return HttpResponse(subject)

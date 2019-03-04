@@ -59,6 +59,8 @@ class Students(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE,null=True)
     address = models.CharField(_('address'), max_length=50, blank=True, null=True)
     postalCode = models.CharField(_('postalCode'), max_length=50, blank=True, null=True)
+    height      =   models.FloatField(blank=True,null=True)
+    weight      =   models.FloatField(blank=True,null=True)
     is_deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True,null=True)
     updated_at = models.DateTimeField(auto_now=True,null=True)

@@ -1,0 +1,125 @@
+{% extends "public/body.html" %}
+
+{% block title  %}
+      Marks Manage
+{% endblock %}
+
+
+
+{% block pagetitle %}
+    page title
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4 class="card-title"> Exams - Enter Marks</h4>
+{#                            <p class="card-category">Complete your profile</p>#}
+                        </div>
+                        <div class="col-md-3">
+{#                            <a href="{% url 'session.create'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Add</a>#}
+{#                            <a href="{% url 'students.excel'  %}" class="btn btn-sm btn-success float-right"><i class="fa fa-file-excel"></i> Excel</a>#}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body table-responsive">
+
+
+                      <form  method="post" action="{% url 'marks.updatemarks' id %}">
+                        {% csrf_token %}
+
+                        <table class="table table-striped">
+                        <tr>
+                            <th>Subject Name</th>
+                            <td colspan="3">{{id}}  </td>
+                        </tr>
+
+
+                         <tr>
+                            <th>Student Name</th>
+                            <th>Roll Number</th>
+                            <th>Obtain Marks</th>
+                            <th>Maximum Marks</th>
+                            </tr>
+                            {% for student in exam.courseexam.all %}
+                            <tr>
+                                <td>{{ student.student.user.first_name }} {{ student.student.user.last_name }}</td>
+                                <td>{{ student.student.rollNumber   }}</td>
+                                     {% for mark in student.markstudent.all %}
+
+                                        {% if mark.examSubject_id == subjectId %}
+                                            <td  >
+                                                {% if mark.examSubject.subject.isGrade == False %}
+                                                <input type="text" class="form-control" name="{{mark.id}}" value="{{mark.marks|default_if_none:''}}" onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')">
+                                                {% else %}
+                                                    <select name="{{ mark.id }}" id="{{ mark.id }}" required  onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
+                                                    <option value="A"   selected disabled>Select Please</option>
+                                                    <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} >A</option>
+                                                    <option value="B" {% if mark.marks == 'B' %} selected {% endif %} >B</option>
+                                                    <option value="C" {% if mark.marks == 'C' %} selected {% endif %} >C</option>
+                                                    <option value="D" {% if mark.marks == 'D' %} selected {% endif %} >D</option>
+                                                    <option value="E" {% if mark.marks == 'E' %} selected {% endif %} >E</option>
+                                                    </select>
+                                                {% endif %}
+
+                                                <span id="error_{{ mark.id }}"></span> </td>
+                                            <td>{{ mark.examSubject.maxMarks }}</td>
+                                        {% endif %}
+                                    {% endfor %}
+                                <!--<td title="Result">{{ student.result }}</td>-->
+
+                            </tr>
+                        {% endfor %}
+</table>
+<input type="submit" value="Update marks">
+</form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<style>
+.alert-sm{
+    padding: 0px 20px !important;
+}
+</style>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <script>
+        function Checkdata(e,val,min,max,id){
+            if(parseFloat(val)<parseFloat(min)){
+                $('#error_'+id).html('<div class="alert alert-sm alert-warning">Input value is Less then minimum Value</div>');
+                // $('#'+id).focus();
+                // return false;
+            }
+            else if(parseFloat(val)>parseFloat(max))
+            {
+                $(e).val(Math.max(Math.min(val, max), -100));
+                $('#error_'+id).html('<div class="alert alert-sm alert-danger">Input value is Greater then Maximum Value</div>');
+                $('#'+id).focus();
+                return false;
+            }
+            else{
+                $('#error_'+id).html('');
+                return true;
+            }
+        }
+
+
+    </script>
+{% endblock %}

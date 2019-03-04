@@ -186,7 +186,11 @@ def excel(request):
                 user.is_student = True
                 user.save()
 
-    return render(request, 'students/excel.html')
+    mediums = Medium.objects.all()
+    countries = Countries.objects.all()
+    states = States.objects.filter(country_id=101).all()
+    courses = Course.objects.all()
+    return render(request, 'students/excel.html', {'mediums':mediums,'countries':countries,'states':states,'courses':courses})
 
 
 def countries(request):

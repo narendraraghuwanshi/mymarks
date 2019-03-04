@@ -20,5 +20,6 @@ urlpatterns = [
     # ex: marks/5/delete
     # path('<int:id>/delete', views.delete, name='marks.delete'),
     #update session exam student marks
-    path('updatemarksajax', views.updatemarksajax, name='marks.updatemarksajax'),
+    path('updatemark/<int:id>', views.updatemarks, name='marks.updatemarks'),
+    path('<int:id>/subject/<int:subject>', views.editstudentsubjectmarks, name='marks.subject'),
 ]
