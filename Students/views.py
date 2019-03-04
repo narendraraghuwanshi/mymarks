@@ -147,6 +147,8 @@ def excel(request):
     if request.method == 'POST':
         if len(request.FILES) != 0:
             exceldata = django_excel.ExcelMixin.get_array(request.FILES['excel'])
+
+
             exceldata.pop(0)
             for data in exceldata:
                 user = User(
