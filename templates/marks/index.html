@@ -46,7 +46,7 @@
                                 <td>{{ student.student.user.first_name }} {{ student.student.user.last_name }}</td>
                                 <td>{{ student.student.rollNumber   }}</td>
                                      {% for mark in student.markstudent.all %}
-                                <td class="editsubmark_{{forloop.counter}}" id="subid_{{ mark.id}}">{{ mark.marks}}</td>
+                                <td class="editsubmark_{{forloop.counter}}" id="subid_{{ mark.id}}">{{ mark.marks }}</td>
                                 {% endfor %}
                                 <td title="Result">{{ student.result }}</td>
                                 <td><a href="{% url 'marks.student' exam.id student.id %} "><i class="material-icons">edit</i></a></td>

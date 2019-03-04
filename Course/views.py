@@ -64,7 +64,7 @@ def detail(request,id):
         return redirect('class.detail', id)
     course = Course.objects.filter(id=id).first()
     masterExams = Exam.objects.filter(is_deleted=False).all()
-    courseExams = ExamCourse.objects.filter(is_deleted=False).all()
+    courseExams = ExamCourse.objects.filter(is_deleted=False ,course_id=id).all()
     return render(request, 'schoolclass/detail.html', {'course': course, 'masterExams':masterExams,'courseExams':courseExams})
 
 
