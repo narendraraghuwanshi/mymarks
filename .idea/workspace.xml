@@ -2,45 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81a2f3e2-c6d6-444b-80b9-3954588e9949" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/marks/middleware.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/marks/subject_mark.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/marks/subject_mark_old.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/marks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/marks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Course/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Course/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exam/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Exam/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/migrations/0002_sessionexammarks_sessionstudent.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamMarks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ExamMarks/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Medium/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/migrations/0002_auto_20190127_1053.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SessionYear/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SessionYear/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Students/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Subject/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/marks/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/excel/.~lock.students.xlsx#" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/excel/students.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/static/excel/students.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/images.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/images.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/images_2Jp51BE.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/images_2Jp51BE.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/images_iMkgKMJ.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/images_iMkgKMJ.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/profile/1/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/1/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/profile/12/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/12/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/profile/2/33302285_1825965630798731_968759942678839296_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/2/33302285_1825965630798731_968759942678839296_n.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/upload/profile/2/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/upload/profile/2/user.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/marks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marks/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/marks/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/marks/student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/public/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/public/body.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schoolclass/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schoolclass/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/students/excel.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/students/excel.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,61 +30,7 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/schoolclass/detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Students/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1305">
-              <caret line="192" column="62" selection-start-line="192" selection-start-column="62" selection-end-line="192" selection-end-column="62" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-                <element signature="e#1158#3369#0" />
-                <element signature="e#3396#3441#0" />
-                <element signature="e#3469#3934#0" />
-                <element signature="e#3964#5726#0" />
-                <element signature="e#5756#6105#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/students/create.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3540">
-              <caret line="236" selection-start-line="236" selection-end-line="272" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/students/excel.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2265">
-              <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Students/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -136,6 +46,9 @@
         <option value="$PROJECT_DIR$/Students/views.py" />
         <option value="$PROJECT_DIR$/templates/students/excel.html" />
         <option value="$PROJECT_DIR$/Students/models.py" />
+        <option value="&lt;c290e7ce-fc01-4a36-a487-72e6f92a4be3&gt;/marks/settings.py" />
+        <option value="&lt;c290e7ce-fc01-4a36-a487-72e6f92a4be3&gt;/templates/students/edit.html" />
+        <option value="&lt;c290e7ce-fc01-4a36-a487-72e6f92a4be3&gt;/Students/views.py" />
       </list>
     </option>
   </component>
@@ -148,20 +61,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="marks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="marks" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -227,16 +127,18 @@
       <workItem from="1551694899047" duration="1691000" />
       <workItem from="1551696916214" duration="4844000" />
       <workItem from="1551723141538" duration="200000" />
+      <workItem from="1551723770804" duration="4305000" />
+      <workItem from="1551810217234" duration="1265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6735000" />
+    <option name="totallyTimeSpent" value="12305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1600" height="875" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22200772" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22522523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -250,12 +152,13 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3941019" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2774799" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3297587" />
+      <window_info anchor="bottom" id="File Transfer" order="13" weight="0.3297587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.32947233" />
+      <window_info anchor="right" id="Remote Host" order="3" visible="true" weight="0.1969112" />
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Database" order="5" weight="0.32947233" />
     </layout>
@@ -284,16 +187,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/schoolclass/detail.html">
+    <entry file="file://$PROJECT_DIR$/Students/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="304">
+          <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/students/excel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/students/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="236" selection-start-line="236" selection-end-line="272" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Students/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
+        <state relative-caret-position="664">
           <caret line="192" column="62" selection-start-line="192" selection-start-column="62" selection-end-line="192" selection-end-column="62" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -306,24 +223,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/students/create.html">
+    <entry file="file://$PROJECT_DIR$/templates/schoolclass/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3540">
-          <caret line="236" selection-start-line="236" selection-end-line="272" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/students/excel.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Students/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="62" column="47" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
+        <state relative-caret-position="664">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
