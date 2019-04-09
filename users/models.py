@@ -33,6 +33,6 @@ def set_token(self):
 
             self.token = ''.join([choice('abcdefghijklmnopqrstuvwxyz0123456789') for i in range(15)])
 
-def save(self, *args, **kwargs):
-    super(Students, self).save(*args, **kwargs)
-    self.set_token()
+# def save(self, *args, **kwargs):
+#     super(Students, self).save(*args, **kwargs)
+#     self.set_token()

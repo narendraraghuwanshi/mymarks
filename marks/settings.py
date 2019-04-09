@@ -105,23 +105,23 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'marks',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mymarks',
-        'USER': 'root',
-        'PASSWORD': 'rtspl',
-        'HOST': 'localhost',
+        'ENGINE': 'djongo',
+        'NAME': 'marks',
     }
 }
+
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mymarks',
+#         'USER': 'root',
+#         'PASSWORD': 'rtspl',
+#         'HOST': 'localhost',
+#     }
+# }
 
 
 # Password validation

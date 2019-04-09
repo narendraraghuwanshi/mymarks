@@ -27,6 +27,9 @@ class City(models.Model):
     state = models.ForeignKey(States, on_delete=models.CASCADE)
     cityName = models.CharField(max_length=20, blank=True, null=True)
 
+class Types(models.Model):
+    id = models.IntegerField(primary_key=True)
+    TypeName = models.CharField(max_length=20, blank=True, null=True)
 
 
 def user_directory_path(instance, filename):
@@ -41,7 +44,7 @@ class Students(models.Model):
     image = models.FileField(upload_to=user_directory_path,blank=True)
     fatherName = models.CharField(_('fatherName'), max_length=50, blank=True, null=True)
     motherName = models.CharField(_('motherName'), max_length=50, blank=True, null=True)
-    rollNumber = models.CharField(_('rollNumber'), max_length=50, blank=True, null=True)
+    StudentType = models.ForeignKey(Types, on_delete=models.CASCADE, blank=True, null=True)
     enrollmentNumber = models.CharField(_('enrollmentNumber'), max_length=50, blank=True, null=True)
     scholarshipNumber = models.CharField(_('scholarshipNumber'), max_length=50, blank=True, null=True)
     adhaarNumber = models.CharField(_('adhaarNumber'), max_length=50, blank=True, null=True)
@@ -52,6 +55,7 @@ class Students(models.Model):
     accountNumber = models.CharField(_('accountNumber'), max_length=50, blank=True, null=True)
     mobileNumber = models.CharField(_('mobileNumber'), max_length=50, blank=True, null=True)
     gender = models.IntegerField(_('gender'),   default=0)
+    regular = models.IntegerField(_('regular'),   default=0)
     medium = models.IntegerField(_('medium'),   default=0)
     dateOfBirth = models.DateField(_('dateOfBirth'), max_length=50, blank=True, null=True)
     country = models.ForeignKey(Countries, on_delete=models.CASCADE,null=True)

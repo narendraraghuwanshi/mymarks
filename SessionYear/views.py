@@ -9,6 +9,7 @@ from Exam.models import ExamCourse
 from Students.models import Students
 from Subject.models import ExamSubject
 from django.contrib import messages
+from django.db.models import Count
 # list of Session
 
 from django.contrib.auth.decorators import login_required
@@ -86,7 +87,8 @@ def detail(request,id):
         messages.success(request, 'All Data Saved successfully.')
         # return HttpResponseRedirect('/session/'+id)
         return redirect('session.detail', id=id)
-    courses     =   ExamCourse.objects.filter(is_deleted=False).all()
+    courses     =   ExamCourse.objects.filter(is_deleted=False).annotate(dcount=Count('course')).all()
+    print(courses)
     return render(request, 'session/detail.html', {'session': sessionYr,'courses':courses})
 
 

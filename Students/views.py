@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from Students.models import Students,Countries,States,City
+from Students.models import Students,Countries,States,City,Types
 from Course.models import Course
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -26,7 +26,8 @@ def create(request):
     countries = Countries.objects.all()
     states   = States.objects.filter(country_id=101).all()
     courses = Course.objects.all()
-    return render(request, 'students/create.html',{'mediums':mediums,'countries':countries,'states':states,'courses':courses})
+    types = Types.objects.all()
+    return render(request, 'students/create.html',{'mediums':mediums,'countries':countries,'states':states,'courses':courses,'types':types})
 
 def store(request):
     if request.method == 'POST':
@@ -34,7 +35,7 @@ def store(request):
         user = User(
             first_name=data['first_name'],
             last_name=data['last_name'],
-            username = data['rollNumber'],
+            username = data['enrollmentNumber'],
             # email = data['email'],
             is_superuser = False,
             is_staff    = False,
@@ -44,7 +45,7 @@ def store(request):
         user.save()
         user.students.fatherName = data['fatherName']
         user.students.motherName = data['motherName']
-        user.students.rollNumber = data['rollNumber']
+        # user.students.rollNumber = data['rollNumber']
         user.students.enrollmentNumber = data['enrollmentNumber']
         user.students.scholarshipNumber = data['scholarshipNumber']
         user.students.adhaarNumber = data['adhaarNumber']
@@ -62,7 +63,10 @@ def store(request):
         user.students.state_id = data['state']
         user.students.country_id = data['country']
         user.students.postalCode = data['postalCode']
-        print(data['course'])
+        # print(data['course'])
+        user.students.regular = data['regular']
+        user.students.height = data['height']
+        user.students.StudentType_id = data['types_id']
         user.students.course_id = data['course']
         user.is_student = True
         if len(request.FILES) != 0:
@@ -91,7 +95,8 @@ def edit(request,id):
     states   = States.objects.filter(country_id=student.country_id).all()
     cities   = City.objects.filter(state_id=student.state_id).all()
     courses = Course.objects.all()
-    return render(request, 'students/edit.html',{'student':student,'mediums':mediums,'countries':countries,'states':states,'cities':cities,'courses':courses});
+    types = Types.objects.all()
+    return render(request, 'students/edit.html',{'student':student,'mediums':mediums,'countries':countries,'states':states,'cities':cities,'courses':courses,'types':types});
 
 def update(request,id):
     if request.method == 'POST':
@@ -101,7 +106,7 @@ def update(request,id):
         user.last_name=data['last_name']
         user.students.fatherName = data['fatherName']
         user.students.motherName = data['motherName']
-        user.students.rollNumber = data['rollNumber']
+        user.students.regular = data['regular']
         user.students.enrollmentNumber = data['enrollmentNumber']
         user.students.scholarshipNumber = data['scholarshipNumber']
         user.students.adhaarNumber = data['adhaarNumber']
@@ -112,6 +117,7 @@ def update(request,id):
         user.students.accountNumber = data['accountNumber']
         user.students.mobileNumber = data['mobileNumber']
         user.students.gender = data['gender']
+        user.students.height = data['height']
         user.students.medium = data['medium']
         user.students.dateOfBirth = data['dateOfBirth']
         user.students.address = data['address']
@@ -120,6 +126,7 @@ def update(request,id):
         user.students.city_id = data['city']
         user.students.postalCode = data['postalCode']
         user.students.course_id = data['course']
+        user.students.StudentType_id = data['types_id']
 
         if len(request.FILES) != 0:
             path = 'static/upload/profile/'+str(user.id)+'/'

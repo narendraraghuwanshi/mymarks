@@ -15,7 +15,7 @@ class SubjectType(models.Model):
 class Subject(models.Model):
     subjectName = models.CharField(_('subjectName'), max_length=50, blank=True, null=True)
     type = models.ForeignKey(SubjectType, on_delete=models.CASCADE, blank=True, null=True)
-    isGrade = models.BooleanField(default=False)
+    isGrade = models.IntegerField(default=False)
     description = models.CharField(_('description'), max_length=50, blank=True, null=True)
     is_deleted = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True,null=True)

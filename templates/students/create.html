@@ -60,10 +60,10 @@
                       </div>
                     </div>
                       <div class="row">
-                      <div class="col-md-6">
+                     <div class="col-md-6">
                         <div class="form-group bmd-form-group">
-                          <label >Roll Number</label>
-                          <input type="text" name="rollNumber" class="form-control">
+                          <label >Date of Birth</label>
+                          <input type="text" name="dateOfBirth" class="form-control flatpicker">
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -130,23 +130,31 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="form-group bmd-form-group">
                           <label >Gender</label><br/>
-                          <input type="radio" name="gender" value="1" > Male
+                          <input type="radio" name="gender" value="1" checked> Male
                           <input type="radio" name="gender" value="2" > Female
                           <input type="radio" name="gender" value="3" > Other
                         </div>
                       </div>
-                      <div class="col-md-6">
+                        <div class="col-md-4">
+                           <div class="form-group bmd-form-group">
+                          <label >Is Regualr</label>
+                          <input type="radio" name="regular" value="1" checked > Regular
+                          <input type="radio" name="regular" value="0" > Private
+                        </div>
+
+                      </div>
+                    <div class="col-md-4">
                         <div class="form-group bmd-form-group">
-                          <label >Date of Birth</label>
-                          <input type="text" name="dateOfBirth" class="form-control flatpicker">
+                          <label >Height</label>
+                          <input type="text" name="height"  class="form-control">
                         </div>
                       </div>
                     </div>
                     <div class="row">
-                     <div class="col-md-6">
+                     <div class="col-md-4">
                         <div class="form-group bmd-form-group">
                           <label >Select Course</label>
                           <select name="course" class="form-control select2">
@@ -157,7 +165,7 @@
                           </select>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="form-group bmd-form-group">
                           <label >Select medium</label>
                           <select name="medium" class="form-control select2">
@@ -168,7 +176,17 @@
                           </select>
                         </div>
                       </div>
-
+                         <div class="col-md-4">
+                        <div class="form-group bmd-form-group">
+                          <label >Type  {{ student.StudentType }}</label>
+                          <select name="types_id" class="form-control select2">
+                              <option selected disabled>Select</option>
+                              {% for type in types %}
+                              <option value="{{ type.id }}" >{{ type.TypeName }}</option>
+                              {% endfor %}
+                          </select>
+                        </div>
+                      </div>
                     </div>
 
                     <div class="row">

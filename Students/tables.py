@@ -40,6 +40,6 @@ class StudentsTable(tables.Table):
 
     class Meta:
         model = Students
-        fields = ('user.first_name','course.courseName','rollNumber','fatherName','motherName')
+        fields = ('user.first_name','course.courseName','course.courseSection','enrollmentNumber','StudentType.TypeName','fatherName','motherName')
         template_name = 'django_tables2/bootstrap4.html'
 
