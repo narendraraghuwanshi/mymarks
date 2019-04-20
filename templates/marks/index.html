@@ -18,13 +18,21 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-10">
                             <h4 class="card-title">{{ exam.courseExam.course.courseName }} :: {{ exam.courseExam.exam.examName }} Exams</h4>
 {#                            <p class="card-category">Complete your profile</p>#}
                         </div>
-                        <div class="col-md-3">
-{#                            <a href="{% url 'session.create'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Add</a>#}
-{#                            <a href="{% url 'students.excel'  %}" class="btn btn-sm btn-success float-right"><i class="fa fa-file-excel"></i> Excel</a>#}
+                        <div class="col-md-2">
+                            <div class="dropdown">
+                              <a class=" dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bars"></i>
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" onclick="SetRollNumber()" href="javascript:void(0)">Set Roll Number</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
+                            </div>
                         </div>
                     </div>
 
@@ -36,7 +44,7 @@
                             <th>Student Name</th>
                             <th>Roll NUmber</th>
                             {% for subject in exam.courseExamSubject.all %}
-                                <th >{{ subject.subject.subjectName }} <a href="{% url 'marks.subject' exam.id subject.id %} "><i class="material-icons edit_submarkth" id="edit_submarkth_{{forloop.counter}}">edit</i></a></th>
+                                <th ><a href="{% url 'marks.subject' exam.id subject.id %} ">{{ subject.subject.subjectName }} <i class="material-icons edit_submarkth" id="edit_submarkth_{{forloop.counter}}">edit</i></a></th>
                             {% endfor %}
                             <th>Result</th>
                             <th>Options</th>
@@ -63,36 +71,48 @@
 
 {% block style %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-<style>
-.editcol{
-
-    border: 1px solid gainsboro;
-    box-shadow: 1px 1px #888888;
-}
-</style>
-
-
 {% endblock %}
 
 {% block script %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script>
-        function Delete(id){
+        function SetRollNumber() {
             $.confirm({
-    title: 'Confirm!',
-    content: 'Are you sure to Delete This ?',
-    buttons: {
-        confirm: function () {
-           window.location = '{% url 'session.index' %}'+id+'/delete';
-        },
-        cancel: function () {
-            {#$.alert('Canceled!');#}
-        },
-    }
-});
+                    title: 'Set Roll Number',
+                    content: '' +
+                    '<form action="" class="formName">' +
+                    '<div class="form-group">' +
+                    '<label>Enter first roll number</label>' +
+                    '<input type="text" placeholder="501" class="name form-control" required />' +
+                    '</div>' +
+                    '<div class="form-group">' +
+                    '<label>Select Order</label>' +
+                    '<select  class="form-control" required >' +
+                    '<option value="0" selected>Current Order</option>' +
+                    '<option value="1" >Order By Name (Ascending)</option>' +
+                    '<option value="2" >Order By Name (descending)</option>' +
+                    '</select>' +
+                    '</div>' +
+                    '</form>',
+                    buttons: {
+                        formSubmit: {
+                            text: 'Submit',
+                            btnClass: 'btn-blue',
+                            action: function () {
+                                var name = this.$content.find('.name').val();
+                                if(!name){
+                                    $.alert('provide a valid name');
+                                    return false;
+                                }
+                                $.alert('Your name is ' + name);
+                            }
+                        },
+                        cancel: function () {
+                            //close
+                        },
+                    }
+                });
         }
-
-
     </script>
 {% endblock %}
 

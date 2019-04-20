@@ -3,9 +3,10 @@ from django.shortcuts import redirect
 from django_tables2 import RequestConfig
 from SessionYear.models import SessionYear,SessionCourseExam, SessionCourseExamStudents
 from ExamMarks.models import SessionExamMarks
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect,HttpResponse
 from SessionYear.table import SessionYearTable
 from Exam.models import ExamCourse
+from Course.models import Course
 from Students.models import Students
 from Subject.models import ExamSubject
 from django.contrib import messages
@@ -64,11 +65,12 @@ def detail(request,id):
         check = SessionCourseExam.objects.filter(courseExam_id=data['exam_id'],session_id=id).first()
         if(check):
             messages.warning(request, 'Exam Already Added.')
-            return redirect('session.detail', id=id)
+            return HttpResponse(False)
 
         examcourse = ExamCourse.objects.filter(id=data['exam_id']).first()
         sessioncourse = SessionCourseExam(
             courseExam_id = data['exam_id'],
+            course_id=examcourse.course_id,
             session_id      = id
         )
         sessioncourse.save()
@@ -85,11 +87,16 @@ def detail(request,id):
 
 
         messages.success(request, 'All Data Saved successfully.')
-        # return HttpResponseRedirect('/session/'+id)
-        return redirect('session.detail', id=id)
-    courses     =   ExamCourse.objects.filter(is_deleted=False).annotate(dcount=Count('course')).all()
-    print(courses)
-    return render(request, 'session/detail.html', {'session': sessionYr,'courses':courses})
+        return HttpResponse(True)
+
+    courses     =   ExamCourse.objects.filter(is_deleted=False).order_by('course_id').all()
+    class_list = SessionCourseExam.objects.filter(is_deleted=False,session_id=id).values('course_id').annotate(dcount=Count('course_id'))
+    data = [];
+    for c in class_list:
+        xc = Course.objects.filter(is_deleted=False,id=c['course_id']).first()
+        xc.exams = SessionCourseExam.objects.filter(is_deleted=False,course_id=c['course_id']).all()
+        data.append(xc)
+    return render(request, 'session/detail.html', {'session': sessionYr,'courses':courses,'class_list':data})
 
 
 # delete class

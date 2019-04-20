@@ -23,8 +23,7 @@
 {#                            <p class="card-category">Complete your profile</p>#}
                         </div>
                         <div class="col-md-3">
-{#                            <a href="{% url 'session.create'  %}" class="btn btn-sm btn-warning float-right"><i class="fa fa-plus"></i> Add</a>#}
-{#                            <a href="{% url 'students.excel'  %}" class="btn btn-sm btn-success float-right"><i class="fa fa-file-excel"></i> Excel</a>#}
+                            <a href="{% url 'students.excel'  %}" class="btn btn-sm btn-success float-right"><i class="fa fa-file-excel"></i> Excel</a>
                         </div>
                     </div>
 
@@ -61,11 +60,16 @@
                                                 {% else %}
                                                     <select name="{{ mark.id }}" id="{{ mark.id }}" required  onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
                                                     <option value="A"   selected disabled>Select Please</option>
-                                                    <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} >A</option>
-                                                    <option value="B" {% if mark.marks == 'B' %} selected {% endif %} >B</option>
-                                                    <option value="C" {% if mark.marks == 'C' %} selected {% endif %} >C</option>
-                                                    <option value="D" {% if mark.marks == 'D' %} selected {% endif %} >D</option>
-                                                    <option value="E" {% if mark.marks == 'E' %} selected {% endif %} >E</option>
+                                                    <option value="A"  {% if mark.marks == 'A+' %} selected {% endif %} > A+</option>
+                                                    <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} > A</option>
+                                                    <option value="B" {% if mark.marks == 'B+' %} selected {% endif %} > B+</option>
+                                                    <option value="B" {% if mark.marks == 'B' %} selected {% endif %} > B</option>
+                                                    <option value="C" {% if mark.marks == 'C+' %} selected {% endif %} > C+</option>
+                                                    <option value="C" {% if mark.marks == 'C' %} selected {% endif %} > C</option>
+                                                    <option value="D" {% if mark.marks == 'D+' %} selected {% endif %} > D+</option>
+                                                    <option value="D" {% if mark.marks == 'D' %} selected {% endif %} > D</option>
+                                                    <option value="E" {% if mark.marks == 'E+' %} selected {% endif %} > E+</option>
+                                                    <option value="E" {% if mark.marks == 'E' %} selected {% endif %} > E</option>
                                                     </select>
                                                 {% endif %}
 

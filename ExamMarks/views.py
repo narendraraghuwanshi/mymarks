@@ -1,15 +1,10 @@
-from django.shortcuts import render
 from django.shortcuts import render,get_object_or_404
 from SessionYear.models import SessionCourseExam,SessionCourseExamStudents
 from ExamMarks.models import SessionExamMarks
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.http import JsonResponse
-import json
-from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-
-
 
 # Create your views here.
 from django.contrib.auth.decorators import login_required
@@ -17,9 +12,6 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='login')
 def index(request, id):
     exam = SessionCourseExam.objects.filter(is_deleted=False, id=id).first()
-
-
-
     return render(request, 'marks/index.html',{'exam':exam})
 
 

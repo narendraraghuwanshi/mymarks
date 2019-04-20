@@ -11,75 +11,36 @@
 
 {% block content %}
     <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">{% trans SESSION %} {{ session.year }}</h4>
-                  <p class="card-category">{% trans ADD_COURSE_AND_EXAMS_IN_THIS_SESSION %}</p>
+        <div class="container-fluid" title="Add Exams">
+        <div class="row">
+            <div class="col-lg-11"></div>
+            <div class="col-lg-1">
+                <div class="btn-group ">
+                  <a  class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-2x fa-plus-square"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    {% for course in courses %}
+                       <a onclick="SubmitFrom({{ course.id }})" class="dropdown-item">{{ course.course.courseName}} ({{ course.course.courseSection}}) - {{ course.exam.examName }}</a>
+                    {% endfor %}
+                  </div>
                 </div>
-                <div class="card-body">
-                    <div class="row text-center">
-                        <div class="col-md-4">
-                            <p>Session Year</p>
-                            <h3>{{ session.year }}</h3>
-                        </div>
-                        <div class="col-md-4">
-                            <p>Session Start Date</p>
-                            <h3>{{ session.sessionStartDate }}</h3>
-                        </div>
-                        <div class="col-md-4">
-                            <p>Session Start End</p>
-                            <h3>{{ session.sessionEndDate }}</h3>
-                        </div>
-                    </div>
-                    <hr/>
-                    <form class="" method="post" id="form">
-                        <div class="row">
-                      {% csrf_token %}
-
-                                <div class="col-md-8 col-sm-8">
-                                    <label class="form-label">Select Course</label>
-                                    <select id="exam" class="form-control select2" name="exam_id">
-                                        <option selected disabled>Select Please</option>
-                                        {% for course in courses %}
-                                            <option value="{{ course.id }}">{{ course.course.courseName}} - {{ course.exam.examName }}</option>
-                                        {% endfor %}
-
-                                    </select>
-                                </div>
-                                  <div class="col-md-4 col-sm-4">
-                                    <br/>
-                                    <input type="button" onclick="SubmitFrom()" value="Add" CLASS="btn btn-primary">
-                                </div>
-                        </div>
-                    </form>
-                    <hr/>
-                    <div class="row text-center">
-                        <div class="col-md-12">
-                            <p>Session Description</p>
-                            <h4>{{ session.sessionDescription }}</h4>
-                        </div>
-                    </div>
-                </div>
-              </div>
             </div>
-          </div>
-
+        </div>
 
         <div class="row">
-        {% for exam in session.session.all %}
+
+        {% for c in class_list %}
             <div class="col-md-6">
               <div class="card">
                 <div class="card-header card-header-warning">
                     <div class="row">
                         <div class="col-md-9">
-                            <h4 class="card-title" title="Exam Name">{{ exam.courseExam.exam.examName }}</h4>
-                            <p class="card-category" title="Class Name">{{ exam.courseExam.course.courseName }}</p>
+                            <h4 class="card-title" title="Class Name">{{ c.courseName }}</h4>
+                            <p class="card-category" title="Class Section">Section : {{ c.courseSection }}</p>
                         </div>
                         <div class="col-md-3">
-                            <a href="{% url 'marks.index' exam.id %}"><i class="material-icons">Book</i></a>
+{#                            <a href="{% url 'marks.index' exam.id %}"><i class="material-icons">Book</i></a>#}
                         </div>
                     </div>
 
@@ -89,20 +50,15 @@
                     <thead class="text-warning">
                       <tr>
                       <th>#</th>
-                      <th>Subject</th>
-                      <th>Type</th>
-                      <th>Minimum Marks</th>
-                      <th>Maximum Marks</th>
+                      <th>Exam name</th>
+                      <th>Options</th>
                     </tr></thead>
                     <tbody>
-                    {% for subject in exam.courseExamSubject.all %}
+                    {% for exams in c.exams %}
                       <tr class="text-center">
-                        <td>{{ subject.id }}</td>
-                        <td>{{ subject.subject.subjectName }}</td>
-                        <td>{{ subject.subject.type.typeName }}</td>
-                        <td>{{ subject.minMarks }}</td>
-                        <td>{{ subject.maxMarks }}</td>
-
+                        <td>{{ exams.id }}</td>
+                        <td>{{ exams.courseExam.exam.examName }}</td>
+                          <td><a href="{% url 'marks.index' exams.id %}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a></td>
                       </tr>
                     {% endfor %}
 
@@ -130,25 +86,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <script>
          $('.select2').select2();
-         function SubmitFrom() {
-             var exam = $('#exam').val();
-             $.confirm({
-                    title: 'Confirm!',
-                    content: '<p class="alert alert-danger text-center">Are you sure to Add this? This is not Deletable</p>',
-                    buttons: {
-                        confirm: function () {
-                            if(exam){
-                                $('#form').submit();
-                            }else{
-                                $.alert('Please Select A Exam')
-                            }
-
-                        },
-                        cancel: function () {
-                            $.alert('You cancel this opration!')
-                        },
+         function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== '') {
+                    var cookies = document.cookie.split(';');
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = cookies[i].trim();
+                        // Does this cookie string begin with the name we want?
+                        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
                     }
-                });
+                }
+                return cookieValue;
+            }
+         function SubmitFrom(exam) {
+             $.ajax({
+                 url:'{% url 'session.detail' session.id %}',
+                 type:'POST',
+                 data:{exam_id:exam,csrfmiddlewaretoken:getCookie('csrftoken')},
+                 success:function(resp){
+                     location.reload();
+                 }
+             })
          }
     </script>
 {% endblock %}

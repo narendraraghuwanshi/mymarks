@@ -28,5 +28,5 @@ urlpatterns = [
     path('medium/', include('Medium.urls')),
     path('session/', include('SessionYear.urls')),
     path('marks/', include('ExamMarks.urls')),
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
 ]

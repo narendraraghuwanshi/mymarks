@@ -62,11 +62,16 @@
                                 {% else %}
                                 <select name="{{ mark.id }}" id="{{ mark.id }}" required  onkeyup="Checkdata(this,this.value,{{ mark.examSubject.minMarks }},{{ mark.examSubject.maxMarks }},'{{ mark.id }}')" class="form-control">
                                 <option value="A"   selected disabled>Select Please</option>
-                                <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} >A</option>
-                                <option value="B" {% if mark.marks == 'B' %} selected {% endif %} >B</option>
-                                <option value="C" {% if mark.marks == 'C' %} selected {% endif %} >C</option>
-                                <option value="D" {% if mark.marks == 'D' %} selected {% endif %} >D</option>
-                                <option value="E" {% if mark.marks == 'E' %} selected {% endif %} >E</option>
+                                <option value="A"  {% if mark.marks == 'A+' %} selected {% endif %} >A+</option>
+                                                    <option value="A"  {% if mark.marks == 'A' %} selected {% endif %} > A</option>
+                                                    <option value="B" {% if mark.marks == 'B+' %} selected {% endif %} > B+</option>
+                                                    <option value="B" {% if mark.marks == 'B' %} selected {% endif %} > B</option>
+                                                    <option value="C" {% if mark.marks == 'C+' %} selected {% endif %} > C+</option>
+                                                    <option value="C" {% if mark.marks == 'C' %} selected {% endif %} > C</option>
+                                                    <option value="D" {% if mark.marks == 'D+' %} selected {% endif %} > D+</option>
+                                                    <option value="D" {% if mark.marks == 'D' %} selected {% endif %} > D</option>
+                                                    <option value="E" {% if mark.marks == 'E+' %} selected {% endif %} > E+</option>
+                                                    <option value="E" {% if mark.marks == 'E' %} selected {% endif %} > E</option>
                                 </select>
                                 {% endif %}
 

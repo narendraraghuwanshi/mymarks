@@ -1,5 +1,6 @@
 from django.db import models
 from Exam.models import ExamCourse
+from Course.models import Course
 from Subject.models import ExamSubject
 from Students.models import Students
 # Create your models here.
@@ -21,9 +22,10 @@ class SessionYear(models.Model):
 
 class SessionCourseExam(models.Model):
     session = models.ForeignKey(SessionYear,on_delete=models.CASCADE,related_name='session')
+    course = models.ForeignKey(Course,on_delete=models.CASCADE,blank=True,default=False,related_name='sessioncourse')
     courseExam = models.ForeignKey(ExamCourse,on_delete=models.CASCADE, related_name='courseExam')
     courseExamSubject      = models.ManyToManyField(ExamSubject,related_name='sessionsubject')
-    # students        = models.ManyToManyField(Students) #remove becouse we need student result and rank column
+    # students        = models.ManyToManyField(Students) #remove because we need student result and rank column
     is_deleted = models.BooleanField(default=False)
 
 class SessionCourseExamStudents(models.Model):
